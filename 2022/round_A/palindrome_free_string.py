@@ -1,61 +1,53 @@
-def generate_question_patterns(length, *prefixes):
-    if length == 1:
-        yield from prefixes
-        yield 1
-        yield from prefixes
-        yield 0
-    else:
-        yield from generate_question_patterns(length - 1, *prefixes, 1)
-        yield from generate_question_patterns(length - 1, *prefixes, 0)
+def has_no_palindrome(head, tail):
+    if len(tail) == 0:
+        return head[0] != head[4] or head[1] != head[3]
 
-
-def has_palindrome(digits):
-    for i in range(len(digits) - 4):
-        if digits[i] == digits[i + 4] and digits[i+1] == digits[i + 3]:
-            return True
-        if len(digits) - 5 > i and digits[i] == digits[i + 5] and digits[i+1] == digits[i + 4] and digits[i+2] == digits[i + 3]:
-            return True
-    return False
-
-
-def check_no_palindrome_is_possible(S, n_questions):
-    qps = generate_question_patterns(n_questions)
-    try:
-        while True:
-            pattern = []
-            for d in S:
-                if d == '?':
-                    pattern.append(next(qps))
-                else:
-                    pattern.append(int(d))
-            if not has_palindrome(pattern):
-                return pattern
-    except StopIteration:
+    # if it has 5-length palindrome
+    if head[0] == head[4] and head[1] == head[3]:
         return False
+
+    next_char = tail[0]
+    tail = tail[1:]
+    # check if it doesn't have 6-length palindrome and go next
+    if next_char == '?':
+        return (
+            (head[0] != '0' or head[1] != head[4] or head[2] != head[3]) and has_no_palindrome(head[1:] + ['0'], tail) or
+            (head[0] != '1' or head[1] != head[4] or head[2] != head[3]) and has_no_palindrome(head[1:] + ['1'], tail)
+        )
+    else:
+        return (head[0] != next_char or head[1] != head[4] or head[2] != head[3]) and has_no_palindrome(head[1:] + [next_char], tail)
+
+
+def generate_patterns(head, tail):
+    if len(tail) == 0:
+        yield head
+    else:
+        next_char = tail[0]
+        tail = tail[1:]
+        if next_char == '?':
+            yield from generate_patterns(head + ['0'], tail)
+            yield from generate_patterns(head + ['1'], tail)
+        else:
+            yield from generate_patterns(head + [next_char], tail)
 
 
 T = int(input())
-for i in range(T):
+for t in range(T):
     N = int(input())
     S = input()
 
     if N < 5:
-        print(f"Case #{i+1}: POSSIBLE")
+        print(f"Case #{t+1}: POSSIBLE")
         continue
 
-    n_questions = S.count('?')
-    if n_questions >= N - 4:
-        print(f"Case #{i+1}: POSSIBLE")
-        continue
-
-    result = True
-    for w in range(5, N + 1):
-        sub_S = S[:w]
-        sub_n_questions = sub_S.count('?')
-        if not check_no_palindrome_is_possible(sub_S, sub_n_questions):
-            result = False
+    head = [c for c in S[:5]]
+    tail = [c for c in S[5:]]
+    result = False
+    for pattern in generate_patterns([], head):
+        if has_no_palindrome(pattern, tail):
+            result = True
             break
     if result:
-        print(f"Case #{i+1}: POSSIBLE")
+        print(f"Case #{t+1}: POSSIBLE")
     else:
-        print(f"Case #{i+1}: IMPOSSIBLE")
+        print(f"Case #{t+1}: IMPOSSIBLE")

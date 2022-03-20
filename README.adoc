@@ -18,7 +18,7 @@ My practice codes for https://codingcompetitions.withgoogle.com/kickstart[Google
 |{checked}
 |{checked}
 |Palindrome Free Strings
-|{unchecked}
+|{checked}
 |{unchecked}
 |Intersting Integers
 |{unchecked}
