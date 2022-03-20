@@ -1,0 +1,26 @@
+:checked: &#10003;
+:unchecked:
+
+= Google Kick Start
+
+My practice codes for https://codingcompetitions.withgoogle.com/kickstart[Google Kick Start]
+
+== 2022
+
+[cols="2,3,1,1"]
+|===
+|Round|Problem|Test Set1|Test Set2
+.4+|https://codingcompetitions.withgoogle.com/kickstart/round/00000000008cb33e[Round A]
+|Speed Typing
+|{checked}
+|{checked}
+|Challenge Nine
+|{checked}
+|{checked}
+|Palindrome Free Strings
+|{unchecked}
+|{unchecked}
+|Intersting Integers
+|{unchecked}
+|{unchecked}
+|===
