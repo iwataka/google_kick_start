@@ -24,3 +24,27 @@ My practice codes for https://codingcompetitions.withgoogle.com/kickstart[Google
 |{unchecked}
 |{unchecked}
 |===
+
+== 2021
+
+[cols="2,3,1,1,1"]
+|===
+|Round|Problem|Test Set1|Test Set2|Test Set3
+.4+|https://codingcompetitions.withgoogle.com/kickstart/round/0000000000436139[Round A]
+|K-Goodness String
+|{checked}
+|{checked}
+|-
+|L Shaped Plots
+|{checked}
+|{checked}
+|-
+|Rabbit House
+|{checked}
+|{checked}
+|-
+|Checksum
+|{checked}
+|{checked}
+|{unchecked}
+|===
