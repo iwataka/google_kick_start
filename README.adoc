@@ -21,8 +21,8 @@ My practice codes for https://codingcompetitions.withgoogle.com/kickstart[Google
 |{checked}
 |{unchecked}
 |Intersting Integers
-|{unchecked}
-|{unchecked}
+|{checked}
+|{checked}
 |===
 
 == 2021
