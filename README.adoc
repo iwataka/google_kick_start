@@ -48,3 +48,21 @@ My practice codes for https://codingcompetitions.withgoogle.com/kickstart[Google
 |{checked}
 |{unchecked}
 |===
+
+[cols="2,3,1,1"]
+|===
+|Round|Problem|Test Set1|Test Set2
+.4+|https://codingcompetitions.withgoogle.com/kickstart/round/0000000000435a5b[Round B]
+|Increasing Substring
+|{checked}
+|{checked}
+|Longest Progression
+|{checked}
+|{checked}
+|Consecutive Primes
+|{unchecked}
+|{unchecked}
+|Truck Delivery
+|{unchecked}
+|{unchecked}
+|===
