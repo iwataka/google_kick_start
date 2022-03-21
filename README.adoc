@@ -60,8 +60,8 @@ My practice codes for https://codingcompetitions.withgoogle.com/kickstart[Google
 |{checked}
 |{checked}
 |Consecutive Primes
-|{unchecked}
-|{unchecked}
+|{checked}
+|{checked}
 |Truck Delivery
 |{unchecked}
 |{unchecked}
